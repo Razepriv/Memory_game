@@ -21,6 +21,8 @@ var columns =5;
 
 var card1Selected;
 var card2Selected;
+var matchSound = document.getElementById("matchSound");
+var notMatchSound = document.getElementById("notMatchSound");
 
 window.onload = function() {
     shuffleCards();

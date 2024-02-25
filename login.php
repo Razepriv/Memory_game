@@ -1,8 +1,11 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $servername = "localhost";
-$username = "root"; // Your MySQL username
-$password = "";     // Your MySQL password
-$dbname = "memory_game"; // Your database name
+$username = "root";
+$password = "";
+$dbname = "memory_game";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -13,8 +16,8 @@ if ($conn->connect_error) {
 }
 
 // Retrieve form data
-$email = $_POST['email'];
-$password = $_POST['password'];
+$email = isset($_POST['email']) ? $_POST['email'] : "";
+$password = isset($_POST['password']) ? $_POST['password'] : "";
 
 // Insert data into the database
 $sql = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
